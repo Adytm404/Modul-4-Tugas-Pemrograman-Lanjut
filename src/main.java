@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class main {
 
@@ -6,12 +7,16 @@ public class main {
 
     public static void main(String[] args) {
 
-        System.out.print("Input number of day: ");
-        day = input.nextInt();
-        countYear();
-        countMonth();
-        countDay();
-        System.out.println(year + " year, " + month + " month, " + dayAsCount + " day.");
+        try{
+            System.out.print("Input number of day: ");
+            day = input.nextInt();
+            countYear();
+            countMonth();
+            countDay();
+            System.out.println(year + " year, " + month + " month, " + dayAsCount + " day.");
+        }catch (InputMismatchException e){
+            System.out.println("Input is not a number!");
+        }
     }
 
     private static void countDay() {
